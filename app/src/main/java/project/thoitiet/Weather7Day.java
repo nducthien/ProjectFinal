@@ -3,7 +3,9 @@ package project.thoitiet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -48,7 +50,7 @@ public class Weather7Day extends AppCompatActivity {
         Log.d("ketqua", "truyenquachua : " + city);
 
         if (city.equals("")) { // nếu biến city truyền qua là rỗng
-            tenThanhPho = "Namdinh"; // biến tenTanhPho bằng Namdinh
+            tenThanhPho = "Ha noi";
             Get7DaysData(tenThanhPho);
         } else {  // >< nếu biến tenThanhPho da ton tai thì nó sẽ bằng biến city truyền qua
             tenThanhPho = city;
@@ -64,6 +66,17 @@ public class Weather7Day extends AppCompatActivity {
         mangthoitiet = new ArrayList<>();
         customAdapter = new CustomAdapter(getBaseContext(), mangthoitiet);
         lvList.setAdapter(customAdapter);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     private void Get7DaysData(String data) {

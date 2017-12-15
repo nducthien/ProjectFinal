@@ -124,4 +124,6 @@
 
     <!-- Dialog strings -->
     <string name="restart_dialog_message">Please restart application to apply new settings</string>
+
+    <string name="title_about">WeatherApp là ứng dụng dự báo thời tiết của nhóm sinh viên FPT PolyTechnich giúp bạn tiếp nhận thông tin thời tiết mới nhất mọi lúc mọi nơi trên mọi thiết bị có kết nói internet.</string>
 </resources>

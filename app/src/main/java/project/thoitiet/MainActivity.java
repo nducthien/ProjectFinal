@@ -1,5 +1,6 @@
 package project.thoitiet;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity
     Button btnSearch;
     Button btnNext;
 
-    String City;
+    String City = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Anhxa();
+        GetCurrentWetherData("Ha noi");
     }
 
     private void Anhxa() {
@@ -93,7 +97,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 String city = edtSearch.getText().toString();
                 if (city.equals("")) {
-                    City = "Hanoi";
+                    City = "Ha noi";
                     GetCurrentWetherData(City);
                 } else {
                     City = city;
@@ -109,8 +113,6 @@ public class MainActivity extends AppCompatActivity
                 Intent intent = new Intent(getBaseContext(), Weather7Day.class);
                 intent.putExtra("name", city);
                 startActivity(intent);
-
-
             }
         });
     }
@@ -214,6 +216,31 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
+        if (id == R.id.help) {
+            AlertDialog.Builder aler = new AlertDialog.Builder(this);
+            aler.setTitle("Thông báo!");
+            aler.setIcon(R.drawable.adf);
+            aler.setMessage("Can I Help You ?");
+
+            aler.setPositiveButton("Hihi", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Toast.makeText(getBaseContext(), "You are funny", Toast.LENGTH_LONG).show();
+
+                }
+            });
+            aler.setNegativeButton("Relax", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                    Toast.makeText(getBaseContext(), "Oh ! Im sory", Toast.LENGTH_LONG).show();
+                }
+            });
+            aler.show();
+            return true;
+        }
+
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -225,11 +252,17 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_like) {
             Intent myWebLink = new Intent();
-            myWebLink.setData(Uri.parse("https://www.facebook.com/cfs.HappyDay/"));
+            myWebLink.setData(Uri.parse("https://github.com/nducthien/ProjectFinal"));
             startActivity(myWebLink);
         } else if (id == R.id.nav_help) {
+            Intent myWebLink1 = new Intent();
+            myWebLink1.setData(Uri
+                    .parse("https://play.google.com/store/apps/details?id=com.bvl.weatherapp&hl=vi"));
+            startActivity(myWebLink1);
 
         } else if (id == R.id.nav_settings) {
+            Intent setting = new Intent(getBaseContext(), SettingsActivity.class);
+            startActivity(setting);
 
         } else if (id == R.id.nav_about) {
             Intent about = new Intent(getBaseContext(), AboutActivity.class);

@@ -23,6 +23,10 @@
         <item name="android:layout_height">48dp</item>
     </style>
 
+    <style name="SplashscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splashscreen</item>
+    </style>
+
 
 
 </resources>

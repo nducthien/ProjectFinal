@@ -31,32 +31,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Version"
-        android:textSize="24sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="4.4"
-        android:textSize="12sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
-        android:background="?android:attr/listDivider" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:text="WeatherApp là ứng dụng dự báo thời tiết của nhóm sinh viên FPT PolyTechnich giúp bạn tiếp nhận thông tin thời tiết mới nhất mọi lúc mọi nơi trên mọi thiết bị có kết nói internet."
-        android:textSize="24sp" />
+        android:text="@string/title_about"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
@@ -70,7 +48,60 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="Email hỗ trợ: thienndph04112@fpt.edu.vn"
+        android:text="+ Liên tục cập nhật thời tiết"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="+ Tốc độ nhanh chính xác"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="+ Share thông tin thời tiết tới bạn bè"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="+ Yêu cầu thiết bị"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text=" -Yêu cầu Android 4.4 trở lên"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Email hỗ trợ: Closed@fpt.edu.vn"
         android:textSize="16sp"
         android:textStyle="bold" />
 
